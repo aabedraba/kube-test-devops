@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/aabedraba/kube-test.git
+    repoURL: https://github.com/aabedraba/kube-test-devops.git
     targetRevision: HEAD
     path: kubernetes
     kustomize:
