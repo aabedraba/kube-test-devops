@@ -9,10 +9,10 @@ To add more binaries for ArgoCD as custom tooling, you need to build a custom `a
 2. Build and push the image to your container registry
 
 ```
-docker buildx build --platform linux/amd64 --push -t CONTAIER_REPOSITORY/custom-argocd - < argocd.dockerfile
+docker build -t CONTAIER_REPOSITORY/argocd-custom - < argocd.dockerfile
 ```
 
-`CONTAINER_REPOSITORY` can be your Docker hub registry, for example `docker buildx ... -t mydockerhub/argocd:latest ...`
+`CONTAINER_REPOSITORY` can be your Docker hub registry, for example `docker build -t mydockerhub/argocd:latest ...`
 
 ### Update custom ArgoCD image
 
