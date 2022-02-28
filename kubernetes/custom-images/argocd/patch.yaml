@@ -1,0 +1,6 @@
+- op: replace
+  path: /spec/template/spec/containers/0/image
+  value: asia-south1-docker.pkg.dev/devrel-341608/kube-test/argocd-custom:latest
+- op: replace
+  path: /spec/template/spec/initContainers/0/image
+  value: asia-south1-docker.pkg.dev/devrel-341608/kube-test/argocd-custom:latest
