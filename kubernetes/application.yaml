@@ -11,8 +11,8 @@ spec:
     path: kubernetes
     kustomize:
       images:
-        - "asia-south1-docker.pkg.dev/aabedraba-com/kube-test/backend:60f0083"
-        - "asia-south1-docker.pkg.dev/aabedraba-com/kube-test/frontend:60f0083"
+        - "asia-south1-docker.pkg.dev/devrel-341608/kube-test/backend:0cb6d40"
+        - "asia-south1-docker.pkg.dev/devrel-341608/kube-test/frontend:0cb6d40"
   destination:
     server: https://kubernetes.default.svc
     namespace: default
