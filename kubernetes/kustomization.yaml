@@ -4,7 +4,6 @@ resources:
   - backend.yaml
   - frontend.yaml
   - application.yaml
-  - argocd-ingress.yaml
 
 images:
   - name: backend-image
