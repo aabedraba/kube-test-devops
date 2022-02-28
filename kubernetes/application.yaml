@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: kube-app
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/aabedraba/kube-test.git
+    targetRevision: HEAD
+    path: kubernetes
+    kustomize:
+      images:
+        - "asia-south1-docker.pkg.dev/aabedraba-com/kube-test/backend:60f0083"
+        - "asia-south1-docker.pkg.dev/aabedraba-com/kube-test/frontend:60f0083"
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
