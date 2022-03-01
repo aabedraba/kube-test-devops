@@ -16,7 +16,7 @@ docker build -t CONTAIER_REPOSITORY/argocd-custom - < argocd.dockerfile
 
 ### Update custom ArgoCD image
 
-Follow the same steps for Building customer ArgoCD image, as it builds with the latest `argocd` image.
+Follow the same steps for Building custom ArgoCD image, as it builds with the latest `argocd` image.
 
 ### Patch existing ArgoCD image
 
