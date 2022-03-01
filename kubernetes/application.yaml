@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: kube-app
+  name: kube-test-app
   namespace: argocd
 spec:
   project: default
@@ -16,3 +16,21 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: default
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: kube-test-app-tests
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/aabedraba/kube-test.git
+    targetRevision: HEAD
+    path: tests
+    plugin:
+      name: testkube
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: testkube
+
