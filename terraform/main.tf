@@ -68,9 +68,40 @@ resource "google_container_cluster" "primary" {
 
   resource_labels = {}
 
-  # Enabling Autopilot for this cluster
+  // Enabling Autopilot for this cluster
   enable_autopilot = true
   vertical_pod_autoscaling {
     enabled = true
   }
+}
+
+// Add github secrets to allow Google Cloud build
+// access to github 
+resource "google_secret_manager_secret" "github" {
+  secret_id = "github"
+  project   = var.project_id
+
+  labels = {}
+  replication {
+    user_managed {
+      replicas {
+        location = "asia-south1"
+      }
+    }
+  }
+}
+
+resource "google_secret_manager_secret_version" "github" {
+  secret = google_secret_manager_secret.github.id
+
+  secret_data = file("./secrets/id_github")
+}
+
+resource "google_secret_manager_secret_iam_binding" "binding" {
+  project   = google_secret_manager_secret.github.project
+  secret_id = google_secret_manager_secret.github.secret_id
+  role      = "roles/secretmanager.secretAccessor"
+  members = [
+    "serviceAccount:${google_project_service_identity.cloud_build.email}"
+  ]
 }
