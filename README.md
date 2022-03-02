@@ -1,6 +1,14 @@
 # Kube-Test devops
 
-## [Testkube](https://github.com/kubeshop/testkube) integration with [ArgoCD](https://github.com/argoproj/argo-cd)
+## Testkube integration with ArgoCD
+
+[Testkube](https://github.com/kubeshop/testkube) is a framework that allows you to build [Integration tests](https://martinfowler.com/bliki/IntegrationTest.html) that run natively in Kubernetes, without needing to expose externally the services that you're testing.
+
+Testkube takes tests Postman or `curl` tests and creates a [Custom Resource Definition](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/) in Kuberentes that will then create those testing resources.
+
+As Testkube generate CRDs, we can use it with [ArgoCD](https://github.com/argoproj/argo-cd) to add the test generation to your Continuous Delivery pipeline.
+
+Let's explore how to do it:
 
 ### Addding Testkube plugin to ArgoCD
 
