@@ -12,7 +12,7 @@ RUN apt-get update && \
   rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
   mkdir testkube && mkdir .testkube && \
   echo "{}" > .testkube/config.json && \
-  cd testkube && wget -O- https://github.com/kubeshop/testkube/releases/download/v0.9.14/testkube_0.9.14_Linux_x86_64.tar.gz | tar -xzvf - && \
+  cd testkube && wget -O- https://github.com/kubeshop/testkube/releases/download/v0.9.17/testkube_0.9.17_Linux_x86_64.tar.gz | tar -xzvf - && \
   mv kubectl-testkube /usr/local/bin/testkube && \
   chmod +x /usr/local/bin/testkube
 
