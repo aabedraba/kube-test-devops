@@ -48,5 +48,5 @@ You can check an example of a application that uses Testkube [here](https://gith
 
 ### Update custom ArgoCD image
 
-Some time you need to update your custom tools to the latest versions, or the ArgoCD image itself. For that, follow the same steps as for [Building custom ArgoCD image](#building-custom-argocd-image-with-testkube).
+If you want to add more custom tools, or you need to update your custom tools to the latest versions, or just want to update the ArgoCD image itself, update the custom image's dockerfile at [`kubernetes/custom-images/argocd.dockerfile`](kubernetes/custom-images/argocd.dockerfile) and follow the same steps as for [Building custom ArgoCD image](#building-custom-argocd-image-with-testkube).
 
