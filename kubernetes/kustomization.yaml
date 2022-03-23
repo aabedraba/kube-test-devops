@@ -8,7 +8,7 @@ resources:
 images:
   - name: backend-image
     newName: asia-south1-docker.pkg.dev/devrel-341608/kube-test/backend
-    newTag: 951ae81
+    newTag: dec0cfc
   - name: frontend-image
     newName: asia-south1-docker.pkg.dev/devrel-341608/kube-test/frontend
-    newTag: 951ae81
+    newTag: dec0cfc
